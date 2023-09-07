@@ -1,8 +1,9 @@
 import React,{useEffect,useState} from 'react'
 
 export default function App() {
-  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
-  const URL = `${PROXY}`;
+
+  const URL ='/proxy';
+  console.log('22222222222',URL)
    const [data,setData]=useState({members:[]})
      useEffect(()=>{
         fetch(`${URL}/api`).then(res =>res.json()).then(items=>setData(items))
