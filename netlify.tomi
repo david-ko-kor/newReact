@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/proxy/*"
-  to = "https://port-0-backendflask-1xxfe2blm32h61z.sel5.cloudtype.app/:splat"
-  status = 200
-  force = true
