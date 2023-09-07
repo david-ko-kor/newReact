@@ -1,15 +1,17 @@
 import React,{useEffect,useState} from 'react'
 
 export default function App() {
+  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+  const URL = `${PROXY}`;
    const [data,setData]=useState({members:[]})
      useEffect(()=>{
-        fetch('/api').then(res =>res.json()).then(items=>setData(items))
+        fetch(`${URL}/api`).then(res =>res.json()).then(items=>setData(items))
 
     },[])
     console.log(data)
     console.log(data.members)
     const submitHandler=()=>{
-      fetch('/data',{
+      fetch(`${URL}/data`,{
        method:'POST',
        body:JSON.stringify({
         user:'goremi',
